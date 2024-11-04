@@ -24,7 +24,7 @@ template = (
     "---------------------\n"
     "{context_str}"
     "\n---------------------\n"
-    "Given only this information and without using ur general knowledge, please answer the question: {query_str}\n"
+    "Given only this information and without using ur general knowledge, please answer the question in argentinian accent: {query_str}\n"
 )
 qa_template = PromptTemplate(template)
 query_engine = index.as_query_engine(streaming=True, text_qa_template=qa_template)
@@ -41,12 +41,8 @@ def response(message, history):
 
 
 def main():
-    chatbot= gr.Chatbot(
-        value=[{"role": "assistant","content": "Wie kann ich dir helfen?"}]
-    )
-
-
-    chatinterface = gr.ChatInterface(
+   
+    chatbot = gr.ChatInterface(
         fn=response,
         type="messages"
     )
@@ -56,10 +52,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-echo "# Team-08" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ID-Start-Winter24/Team-08.git
-git push -u origin main
