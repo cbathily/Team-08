@@ -24,7 +24,7 @@ template = (
     "---------------------\n"
     "{context_str}"
     "\n---------------------\n"
-    "Given only this information and without using ur general knowledge, please answer the question in argentinian accent: {query_str}\n"
+    "Given only this information and without using ur general knowledge, please answer the question in german: {query_str}\n"
 )
 qa_template = PromptTemplate(template)
 query_engine = index.as_query_engine(streaming=True, text_qa_template=qa_template)
